@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Domine', serif;
+}
+
+.search {
+  display: block;
+  margin: 20px auto; 
+  height: 30px;
+  text-align: center;
+  padding: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+.contacts-list {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.contact {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  background: lightgrey;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 0 10px;
+}
+
+.contact p {
+  flex: 1;
+}

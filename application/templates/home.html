@@ -3,16 +3,16 @@
 
 <head>
   <title>AddressBook</title>
-  <link 
-    rel="stylesheet" 
-    href="{{ url_for('static',filename='styles/styles.css') }}"
+  <link href="https://fonts.googleapis.com/css?family=Domine|Roboto|Rubik" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}"
   />
 </head>
 
 
 <body>
   <h1>AddressBook</h1>
-  <p>search</p>
+  <input placeholder="search contacts" class="search">
+  </input>
 
   <!--for user feedback -->
   {% with messages = get_flashed_messages(with_categories=true) %} 

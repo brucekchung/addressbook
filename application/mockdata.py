@@ -1,10 +1,10 @@
 mockdata = [
   {
     'name': 'Bruce',
-    'street': '143 Via Mirabella',
-    'city': 'Newbury Park',
+    'street': '143 Via',
+    'city': 'Nub Park',
     'state': 'CA',
-    'zip': '91320'
+    'zip': '02319'
   },
   {
     'name': 'Grace',

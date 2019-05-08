@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>AddressBook</title>
+  <link 
+    rel="stylesheet" 
+    href="{{ url_for('static',filename='styles/styles.css') }}"
+  />
+</head>
+
+
+<body>
+  <h1>AddressBook</h1>
+  <p>search</p>
+
+  <!--for user feedback -->
+  {% with messages = get_flashed_messages(with_categories=true) %} 
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="feedback">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+
+  <!--for addcontact-->
+  {% block content %}{% endblock %}
+
+
+  <!--contacts-->
+  <div class="contacts-list">
+
+  {% for contact in contacts %}
+    <div class="contact">
+      <p>{{ contact.name }}</p>
+      <p>{{ contact.street }}</p>
+      <p>{{ contact.city }}</p>
+      <p>{{ contact.state }}</p>
+      <p>{{ contact.zip }}</p>
+    </div>
+  {% endfor %}
+
+  </div>
+</body>
+
+
+</html>

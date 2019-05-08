@@ -1,50 +1,24 @@
-<!DOCTYPE html>
-<html>
+{% extends "layout.html" %}
 
-<head>
-  <title>AddressBook</title>
-  <link href="https://fonts.googleapis.com/css?family=Domine|Roboto|Rubik" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}"
-  />
-</head>
+{% block content %}
 
+<input placeholder="search contacts" class="search"></input>
 
-<body>
-  <h1>AddressBook</h1>
-  <input placeholder="search contacts" class="search">
-  </input>
+<a href="/addcontact">
+  <button>Add Contact</button>
+</a>
 
-  <!--for user feedback -->
-  {% with messages = get_flashed_messages(with_categories=true) %} 
-    {% if messages %}
-      {% for category, message in messages %}
-        <div class="feedback">
-          {{ message }}
-        </div>
-      {% endfor %}
-    {% endif %}
-  {% endwith %}
+<div class="contacts-list">
 
-
-  <!--for addcontact-->
-  {% block content %}{% endblock %}
-
-
-  <!--contacts-->
-  <div class="contacts-list">
-
-  {% for contact in contacts %}
-    <div class="contact">
-      <p>{{ contact.name }}</p>
-      <p>{{ contact.street }}</p>
-      <p>{{ contact.city }}</p>
-      <p>{{ contact.state }}</p>
-      <p>{{ contact.zipcode }}</p>
-    </div>
-  {% endfor %}
-
+{% for contact in contacts %}
+  <div class="contact">
+    <p>{{ contact.name }}</p>
+    <p>{{ contact.street }}</p>
+    <p>{{ contact.city }}</p>
+    <p>{{ contact.state }}</p>
+    <p>{{ contact.zipcode }}</p>
   </div>
-</body>
+{% endfor %}
 
-
-</html>
+</div>
+{% endblock %}

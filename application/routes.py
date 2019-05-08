@@ -4,9 +4,13 @@ from flask import render_template
 from application.mockdata import mockdata
 
 
+# from application.models import Post
+
 @app.route('/')
 @app.route('/home')
 def home():
+  # actual = Post.query.all()
+  # print('postdata: ', actual)
   return render_template('home.html', contacts=mockdata) 
 
 @app.route('/addcontact', methods=['GET', 'POST'])

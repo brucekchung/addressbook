@@ -1,4 +1,4 @@
-{% extends "home.html" %}
+{% extends "layout.html" %}
 
 {% block content %}
 <div class="add-contact">
@@ -27,7 +27,10 @@
       {{ contact.zipcode(class="form-input") }}
     </div>
 
-    <button>Submit</button>
+    <button type="submit">Submit</button>
+    <a href="/">
+      <button type="button">Return</button>
+    </a>
 
   </form>
 </div>

@@ -1,4 +1,5 @@
 from application import app
+from application.forms import ContactForm
 from flask import render_template
 from application.mockdata import mockdata
 
@@ -8,6 +9,9 @@ from application.mockdata import mockdata
 def home():
   return render_template('home.html', contacts=mockdata) 
 
-@app.route('/addcontact')
+@app.route('/addcontact', methods=['GET', 'POST'])
 def addcontact():
-  return render_template('addcontact.html')
+  contact = ContactForm()
+  if contact.validate_on_submit():
+    print('worked!!')
+  return render_template('addcontact.html', contact=contact)

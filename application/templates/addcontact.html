@@ -2,7 +2,33 @@
 
 {% block content %}
 <div class="add-contact">
-  <h3>Contacts</h3>
+  <h3>Add a new Contact</h3>
 
+  <form action="POST">
+
+    <div class="contact-form">
+      {{ contact.name.label(class="label") }}
+      {{ contact.name(class="form-input") }}
+    </div>
+    <div class="contact-form">
+      {{ contact.street.label(class="label") }}
+      {{ contact.street(class="form-input") }}
+    </div>
+    <div class="contact-form">
+      {{ contact.city.label(class="label") }}
+      {{ contact.city(class="form-input") }}
+    </div>
+    <div class="contact-form">
+      {{ contact.state.label(class="label") }}
+      {{ contact.state(class="form-input") }}
+    </div>
+    <div class="contact-form">
+      {{ contact.zipcode.label(class="label") }}
+      {{ contact.zipcode(class="form-input") }}
+    </div>
+
+    <button>Submit</button>
+
+  </form>
 </div>
 {% endblock %}

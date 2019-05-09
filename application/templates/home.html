@@ -10,13 +10,26 @@
 
 <div class="contacts-list">
 
+  <div class="contact-header">
+    <p>Name</p>
+    <p class="flex2">Street</p>
+    <p>City</p>
+    <p>State</p>
+    <p>Zipcode</p>
+  </div>
 {% for contact in contacts %}
   <div class="contact">
     <p>{{ contact.name }}</p>
-    <p>{{ contact.street }}</p>
+    <p class="flex2">{{ contact.street }}</p>
     <p>{{ contact.city }}</p>
     <p>{{ contact.state }}</p>
-    <p>{{ contact.zipcode }}</p>
+    <p>{{ contact.zipcode }}
+      <span class="delete-button">
+        <form action="{{ url_for('deletecontact', post_id=contact.id) }}" method="POST">
+          <input type="submit" value="Delete">
+        </form>
+      </span>
+    </p>
   </div>
 {% endfor %}
 

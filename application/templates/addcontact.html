@@ -1,8 +1,40 @@
-{% extends "home.html" %}
+{% extends "layout.html" %}
 
 {% block content %}
 <div class="add-contact">
-  <h3>Contacts</h3>
+  <h3>Add a new Contact</h3>
 
+  <form method="POST" action="">
+    <!-- protects against CSRF, need SECRET_KEY -->
+    <!-- will not validate_on_submit without -->
+    {{ contact.hidden_tag() }}
+
+    <div class="contact-form">
+      {{ contact.name.label(class="label") }}
+      {{ contact.name(class="form-input") }}
+    </div>
+    <div class="contact-form">
+      {{ contact.street.label(class="label") }}
+      {{ contact.street(class="form-input") }}
+    </div>
+    <div class="contact-form">
+      {{ contact.city.label(class="label") }}
+      {{ contact.city(class="form-input") }}
+    </div>
+    <div class="contact-form">
+      {{ contact.state.label(class="label") }}
+      {{ contact.state(class="form-input") }}
+    </div>
+    <div class="contact-form">
+      {{ contact.zipcode.label(class="label") }}
+      {{ contact.zipcode(class="form-input") }}
+    </div>
+
+    <button type="submit">Submit</button>
+    <a href="/">
+      <button type="button">Return</button>
+    </a>
+
+  </form>
 </div>
 {% endblock %}

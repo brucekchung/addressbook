@@ -4,7 +4,10 @@
 <div class="add-contact">
   <h3>Add a new Contact</h3>
 
-  <form action="POST">
+  <form method="POST" action="">
+    <!-- protects against CSRF, need SECRET_KEY -->
+    <!-- will not validate_on_submit without -->
+    {{ contact.hidden_tag() }}
 
     <div class="contact-form">
       {{ contact.name.label(class="label") }}

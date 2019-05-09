@@ -7,6 +7,14 @@ h1 {
   font-family: 'Domine', serif;
 }
 
+.feedback {
+  background: #c8f7c5;
+  color: #1e824c;
+  padding: 15px;
+  text-align: center;
+  font-family: 'Rubik';
+}
+
 .search {
   display: block;
   margin: 20px auto; 

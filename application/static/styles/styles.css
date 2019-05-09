@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  color: #2e3131;
 }
 
 h1 {
@@ -30,17 +31,35 @@ h1 {
   max-width: 1200px;
 }
 
-.contact {
+.contact, .contact-header {
   font-family: 'Roboto', sans-serif;
   display: flex;
   justify-content: space-between;
-  background: lightgrey;
-  border-bottom: 1px solid #f0f0f0;
+  background: #e4e9ed;
+  border-bottom: 1px solid #dadfe1;
   padding: 0 10px;
 }
 
-.contact p {
+.contact-header {
+  font-family: 'Domine', serif;
+  background: #95a5a6;
+}
+
+
+.contact p, .contact-header p {
   flex: 1;
+}
+
+.flex2 {
+  flex: 2 !important;
+}
+
+.delete-button {
+  height: 20px;
+  width: 20px;
+  float: right;
+  /* margin: 10px 10px 0 0; */
+  border: 1px solid red;
 }
 
 .add-contact {

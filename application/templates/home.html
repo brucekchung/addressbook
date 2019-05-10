@@ -2,11 +2,11 @@
 
 {% block content %}
 
-<input placeholder="search contacts" class="search"></input>
-
-<a href="/addcontact">
-  <button>Add Contact</button>
-</a>
+  <button class="add-contact-button">
+    <a href="/addcontact" class="add-contact-link">
+      Add Contact
+    </a>
+  </button>
 
 <div class="contacts-list">
 
@@ -23,13 +23,11 @@
     <p class="flex2">{{ contact.street }}</p>
     <p>{{ contact.city }}</p>
     <p>{{ contact.state }}</p>
-    <p>{{ contact.zipcode }}
-      <span class="delete-button">
-        <form action="{{ url_for('deletecontact', post_id=contact.id) }}" method="POST">
-          <input type="submit" value="Delete">
-        </form>
-      </span>
-    </p>
+    <p>{{ contact.zipcode }}</p>
+    <form action="{{ url_for('deletecontact', post_id=contact.id) }}" method="POST">
+      <input class="delete-button" type="submit" value="Delete">
+    </form>
+    <image src="{{ url_for('static', filename='images/trash.png') }}" class="trash" />
   </div>
 {% endfor %}
 

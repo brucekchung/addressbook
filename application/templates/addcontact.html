@@ -18,22 +18,30 @@
       {{ contact.street(class="form-input") }}
     </div>
     <div class="contact-form">
-      {{ contact.city.label(class="label") }}
-      {{ contact.city(class="form-input  city-input") }}
-    </div>
-    <div class="contact-form">
-      {{ contact.state.label(class="label") }}
-      {{ contact.state(class="form-input  state-input") }}
-    </div>
-    <div class="contact-form">
       {{ contact.zipcode.label(class="label") }}
       {{ contact.zipcode(class="form-input  zipcode-input") }}
     </div>
 
-    <button type="submit">Submit</button>
-    <a href="/">
-      <button type="button">Return</button>
-    </a>
+    <div class="input-wrapper">
+      <div class="contact-form">
+        {{ contact.city.label(class="label") }}
+        {{ contact.city(class="form-input  city-input") }}
+      </div>
+      <div class="contact-form">
+        {{ contact.state.label(class="label") }}
+        {{ contact.state(class="form-input  state-input") }}
+      </div>
+    </div>
+
+    <div class="button-wrapper">
+      <button type="button" class="return-button">
+        <a href="/" class="return-link">
+          Return
+        </a>
+      </button>
+
+      <button type="submit" class="add-button">Submit</button>
+    </div>
 
   </form>
 </div>

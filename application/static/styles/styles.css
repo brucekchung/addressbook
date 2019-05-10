@@ -8,22 +8,39 @@ h1 {
   font-family: 'Domine', serif;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .feedback {
   background: #c8f7c5;
   color: #1e824c;
   padding: 15px;
   text-align: center;
   font-family: 'Rubik';
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.search {
+
+.add-contact-button {
+  margin: 20px auto;
   display: block;
-  margin: 20px auto; 
   height: 30px;
-  text-align: center;
-  padding: 5px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  width: 100px;
+  font-family: 'Rubik';
+  font-size: 13px;
+}
+
+.add-contact-link,
+.return-link {
+  text-decoration: none;
+}
+
+.button-wrapper {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .contacts-list {
@@ -32,6 +49,7 @@ h1 {
 }
 
 .contact, .contact-header {
+  position: relative;
   font-family: 'Roboto', sans-serif;
   display: flex;
   justify-content: space-between;
@@ -39,6 +57,10 @@ h1 {
   border-bottom: 1px solid #dadfe1;
   border-top: 1px solid ghostwhite;
   padding: 0 10px;
+}
+
+.contact:hover {
+  background: #dadfe1;
 }
 
 .contact-header {
@@ -56,18 +78,68 @@ h1 {
 }
 
 .delete-button {
-  height: 20px;
-  width: 20px;
-  float: right;
-  /* margin: 10px 10px 0 0; */
-  border: 1px solid red;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  opacity: 0;
+  z-index: 10;
+}
+
+.delete-button:hover {
+  cursor: pointer;
+}
+
+.trash {
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  object-fit: contain;
 }
 
 .add-contact {
-  border: 1px solid blue;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.label {
+  font-family: 'Domine', serif;
+}
+
+.form-input {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  padding: 3px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.input-wrapper {
+  display: flex;
 }
 
 .add-contact h3 {
   text-align: center;
   font-family: 'Roboto', sans-serif;
+}
+
+.return-button,
+.add-button {
+  height: 30px;
+  width: 100px;
+  font-family: 'Rubik';
+  font-size: 13px;
+}
+
+.add-button {
+  background: #1e824c;
+  border: none;
+  color: white;
 }

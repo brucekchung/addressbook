@@ -32,8 +32,15 @@ button:hover {
   font-size: 13px;
 }
 
-.add-contact-link {
+.add-contact-link,
+.return-link {
   text-decoration: none;
+}
+
+.button-wrapper {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .contacts-list {
@@ -50,6 +57,10 @@ button:hover {
   border-bottom: 1px solid #dadfe1;
   border-top: 1px solid ghostwhite;
   padding: 0 10px;
+}
+
+.contact:hover {
+  background: #dadfe1;
 }
 
 .contact-header {
@@ -90,10 +101,45 @@ button:hover {
 }
 
 .add-contact {
-  border: 1px solid blue;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.label {
+  font-family: 'Domine', serif;
+}
+
+.form-input {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  padding: 3px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.input-wrapper {
+  display: flex;
 }
 
 .add-contact h3 {
   text-align: center;
   font-family: 'Roboto', sans-serif;
+}
+
+.return-button,
+.add-button {
+  height: 30px;
+  width: 100px;
+  font-family: 'Rubik';
+  font-size: 13px;
+}
+
+.add-button {
+  background: #1e824c;
+  border: none;
+  color: white;
 }

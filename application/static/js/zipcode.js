@@ -1,47 +1,48 @@
 const zipcodeInput = document.querySelector('.zipcode-input')
+const stateInput = document.querySelector('.state-input')
+const cityInput = document.querySelector('.city-input')
 
 
+//send fetch request based off zipcode input
 zipcodeInput.addEventListener('keyup', (e) => {
   const zipcode = e.target.value 
   const shouldFetch = zipcode.length === 5
 
   if (shouldFetch) {
-    console.log('works', e.target.value)
     fetchLocationData(zipcode)
   }
 })
 
 
-
-
+//query USPS web services and convert response to json
 async function fetchLocationData(zipcode) {
   const userId = '195LETSR2101'
   const requestUrl = `https://secure.shippingapis.com/shippingapi.dll?API=CityStateLookup&XML=<CityStateLookupRequest USERID="${ userId }"><ZipCode ID='0'><Zip5>${ zipcode }</Zip5></ZipCode></CityStateLookupRequest>`
   const parseXml = (xmlStr) => {
      return new window.DOMParser().parseFromString(xmlStr, "text/xml")
   }
+
   const response = await fetch(requestUrl)
     .then(res => res.text())
 
-  // console.log('response: ', response)
   const parsedXml = parseXml(response)
   const locationDataJson = xmlToJson(parsedXml)
-  // console.log('locationDataJson: ', locationDataJson) 
+
   setCityAndState(locationDataJson)
 }
 
 
+//autocomplete City and State inputs based on zipcode
 function setCityAndState(locationData) {
   const city = locationData.CityStateLookupResponse.ZipCode.City['#text']
   const state = locationData.CityStateLookupResponse.ZipCode.State['#text']
-  console.log('city: ', city)
-  console.log('state: ', state)
+
+  cityInput.value = city
+  stateInput.value = state
 }
 
 
-
-
-//below function from David Walsh (https://davidwalsh.name/convert-xml-json)
+//below function credit: David Walsh (https://davidwalsh.name/convert-xml-json)
 // Changes XML to JSON
 function xmlToJson(xml) {
 	

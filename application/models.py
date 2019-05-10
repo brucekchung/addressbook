@@ -12,4 +12,3 @@ class Post(db.Model):
   def __repr__(self):
     return f"Post('{self.id}', '{self.name}', '{self.street}', '{self.city}', '{self.state}', '{self.zipcode}')"
 
-

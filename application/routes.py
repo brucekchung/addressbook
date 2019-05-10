@@ -37,4 +37,3 @@ def deletecontact(post_id):
   flash(f'Goodbye {contact_to_delete.name}...', 'success')
   return redirect(url_for('home'))
 
-
